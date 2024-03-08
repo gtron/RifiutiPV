@@ -1,0 +1,343 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.gsoft</groupId>
+	<artifactId>rifiuti</artifactId>
+	<version>4.0.0-SNAPSHOT</version>
+	<name>RifiutiPV</name>
+	<properties>
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
+	</properties>
+	<packaging>jar</packaging>
+	<dependencies>
+		<dependency>
+			<groupId>local.dir</groupId>
+			<artifactId>commons-beanutils-core</artifactId>
+			<systemPath>
+				/home/gtron/DGT/Rifiuti2024/lib/commons-beanutils-core.jar</systemPath>
+			<version>0.0.1</version>
+			<scope>system</scope>
+		</dependency>
+		<dependency>
+			<groupId>local.dir</groupId>
+			<artifactId>
+				commons-beanutils</artifactId>
+			<systemPath>
+				/home/gtron/DGT/Rifiuti2024/lib/commons-beanutils.jar</systemPath>
+			<version>
+				0.0.1</version>
+			<scope>system</scope>
+		</dependency>
+		<dependency>
+			<groupId>local.dir</groupId>
+			<artifactId>
+				commons-collections-3.1</artifactId>
+			<systemPath>
+				/home/gtron/DGT/Rifiuti2024/lib/commons-collections-3.1.jar</systemPath>
+			<version>
+				0.0.1</version>
+			<scope>system</scope>
+		</dependency>
+		<dependency>
+			<groupId>local.dir</groupId>
+			<artifactId>
+				commons-digester-1.7</artifactId>
+			<systemPath>
+				/home/gtron/DGT/Rifiuti2024/lib/commons-digester-1.7.jar</systemPath>
+			<version>
+				0.0.1</version>
+			<scope>system</scope>
+		</dependency>
+		<dependency>
+			<groupId>local.dir</groupId>
+			<artifactId>
+				commons-logging</artifactId>
+			<systemPath>
+				/home/gtron/DGT/Rifiuti2024/lib/commons-logging.jar</systemPath>
+			<version>
+				0.0.1</version>
+			<scope>
+				system</scope>
+		</dependency>
+		<!--		<dependency>-->
+		<!--			<groupId>local.dir</groupId>-->
+		<!--			<artifactId>hsqldb</artifactId>-->
+		<!--
+		<systemPath>/home/gtron/DGT/Rifiuti2024/lib/hsqldb-2.5.0.jar</systemPath>-->
+		<!--			<version>2.5.0</version>-->
+		<!--			<scope>system</scope>-->
+		<!--		</dependency>-->
+		<dependency>
+			<groupId>local.dir</groupId>
+			<artifactId>
+				itext-1.3.1</artifactId>
+			<systemPath>
+				/home/gtron/DGT/Rifiuti2024/lib/itext-1.3.1.jar</systemPath>
+			<version>
+				0.0.1</version>
+			<scope>
+				system</scope>
+		</dependency>
+		<dependency>
+			<groupId>local.dir</groupId>
+			<artifactId>
+				jasperreports-1.1.1</artifactId>
+			<systemPath>
+				/home/gtron/DGT/Rifiuti2024/lib/jasperreports-1.1.1.jar</systemPath>
+			<version>
+				0.0.1</version>
+			<scope>
+				system</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>local.dir</groupId>
+			<artifactId>jcalendar</artifactId>
+			<systemPath>/home/gtron/DGT/Rifiuti2024/lib/jcalendar.jar</systemPath>
+			<version>0.0.1</version>
+			<scope>system</scope>
+		</dependency>
+		<dependency>
+			<groupId>local.dir</groupId>
+			<artifactId>
+				jce</artifactId>
+			<systemPath>/home/gtron/DGT/Rifiuti2024/lib/jce.jar</systemPath>
+			<version>
+				0.0.1</version>
+			<scope>
+				system</scope>
+		</dependency>
+		<dependency>
+			<groupId>
+				local.dir</groupId>
+			<artifactId>jcommon-1.0.0</artifactId>
+			<systemPath>
+				/home/gtron/DGT/Rifiuti2024/lib/jcommon-1.0.0.jar</systemPath>
+			<version>
+				0.0.1</version>
+			<scope>
+				system</scope>
+		</dependency>
+		<dependency>
+			<groupId>local.dir</groupId>
+			<artifactId>jfreechart-1.0.1</artifactId>
+			<systemPath>
+				/home/gtron/DGT/Rifiuti2024/lib/jfreechart-1.0.1.jar</systemPath>
+			<version>
+				0.0.1</version>
+			<scope>system</scope>
+		</dependency>
+		<dependency>
+			<groupId>local.dir</groupId>
+			<artifactId>
+				msbase</artifactId>
+			<systemPath>/home/gtron/DGT/Rifiuti2024/lib/msbase.jar</systemPath>
+			<version>
+				0.0.1</version>
+			<scope>system</scope>
+		</dependency>
+		<dependency>
+			<groupId>local.dir</groupId>
+			<artifactId>
+				mssqlserver</artifactId>
+			<systemPath>
+				/home/gtron/DGT/Rifiuti2024/lib/mssqlserver.jar</systemPath>
+			<version>
+				0.0.1</version>
+			<scope>system</scope>
+		</dependency>
+		<dependency>
+			<groupId>local.dir</groupId>
+			<artifactId>
+				msutil</artifactId>
+			<systemPath>
+				/home/gtron/DGT/Rifiuti2024/lib/msutil.jar</systemPath>
+			<version>0.0.1</version>
+			<scope>
+				system</scope>
+		</dependency>
+		<dependency>
+			<groupId>local.dir</groupId>
+			<artifactId>
+				mysql-connector-java-3.1.6-bin</artifactId>
+			<systemPath>
+				/home/gtron/DGT/Rifiuti2024/lib/mysql-connector-java-3.1.6-bin.jar</systemPath>
+			<version>
+				0.0.1</version>
+			<scope>system</scope>
+		</dependency>
+		<dependency>
+			<groupId>local.dir</groupId>
+			<artifactId>
+				poi-2.5.1-final-20040804</artifactId>
+			<systemPath>
+				/home/gtron/DGT/Rifiuti2024/lib/poi-2.5.1-final-20040804.jar</systemPath>
+			<version>
+				0.0.1</version>
+			<scope>system</scope>
+		</dependency>
+		<dependency>
+			<groupId>local.dir</groupId>
+			<artifactId>
+				poi-contrib-2.5.1-final-20040804</artifactId>
+			<systemPath>
+				/home/gtron/DGT/Rifiuti2024/lib/poi-contrib-2.5.1-final-20040804.jar</systemPath>
+			<version>
+				0.0.1</version>
+			<scope>system</scope>
+		</dependency>
+		<dependency>
+			<groupId>local.dir</groupId>
+			<artifactId>
+				themes</artifactId>
+			<systemPath>
+				/home/gtron/DGT/Rifiuti2024/lib/themes.jar</systemPath>
+			<version>0.0.1</version>
+			<scope>
+				system</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>local.dir</groupId>
+			<artifactId>themes</artifactId>
+			<systemPath>
+				/home/gtron/DGT/Rifiuti2024/lib/themes.jar</systemPath>
+			<version>0.0.1</version>
+			<scope>
+				system</scope>
+		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/com.toedter/jcalendar -->
+		<dependency>
+			<groupId>com.toedter</groupId>
+			<artifactId>
+				jcalendar</artifactId>
+			<version>
+				1.2.2</version>
+		</dependency>
+
+		<!--
+		https://mvnrepository.com/artifact/org.eclipse.birt.runtime.3_7_1/com.lowagie.text -->
+		<dependency>
+			<groupId>
+				org.eclipse.birt.runtime.3_7_1</groupId>
+			<artifactId>
+				com.lowagie.text</artifactId>
+			<version>2.1.7</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.jfree.chart/org.jfree.chart-library -->
+		<!--<dependency>-->
+		<!--    <groupId>org.jfree.chart</groupId>-->
+		<!--    <artifactId>org.jfree.chart</artifactId>-->
+		<!--    <version>1.0.1</version>-->
+		<!--    <type>jar</type>-->
+		<!--</dependency>-->
+		<!--
+		https://mvnrepository.com/artifact/org.jfree.chart/org.jfree.chart-library -->
+		<dependency>
+			<groupId>
+				org.jfree</groupId>
+			<artifactId>
+				jfreechart</artifactId>
+			<version>1.0.19</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.hsqldb/hsqldb -->
+		<dependency>
+			<groupId>org.hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<version>2.3.4</version>
+			<scope>test</scope>
+		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/net.sf.ucanaccess/ucanaccess -->
+		<dependency>
+			<groupId>net.sf.ucanaccess</groupId>
+			<artifactId>ucanaccess</artifactId>
+			<version>5.0.1</version>
+		</dependency>
+
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>
+					org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.6</version>
+				<executions>
+					<execution>
+						<id>
+							unpack-dependencies</id>
+						<phase>package</phase>
+						<goals>
+							<goal>unpack-dependencies</goal>
+						</goals>
+						<configuration>
+							<excludeScope>
+								system</excludeScope>
+							<excludes>
+								META-INF/*.SF,META-INF/*.DSA,META-INF/*.RSA</excludes>
+							<excludeGroupIds>
+								junit,org.mockito,org.hamcrest</excludeGroupIds>
+							<outputDirectory>
+								${project.build.directory}/classes</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>
+					org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>3.2.0</version>
+				<executions>
+					<!-- Attach the shade into the package phase -->
+					<execution>
+						<phase>
+							package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+
+							<filters>
+								<filter>
+									<artifact>*:*</artifact>
+									<excludes>
+										<exclude>
+											META-INF/*.SF</exclude>
+										<exclude>META-INF/*.DSA</exclude>
+										<exclude>META-INF/*.RSA</exclude>
+									</excludes>
+								</filter>
+							</filters>
+							<transformers>
+								<transformer
+									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+									<mainClass>
+										com.gtsoft.rifiuti.front.RifiutiFrame</mainClass>
+								</transformer>
+							</transformers>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+	</build>
+</project>
