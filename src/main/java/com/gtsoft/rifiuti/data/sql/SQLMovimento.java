@@ -502,7 +502,7 @@ public class SQLMovimento extends ISQLAdapter {
         
         if ( rs != null ) {
             rs.next();
-            num = (Integer) rs.getObject(1) ;
+            num = Integer.valueOf("" + rs.getObject(1));
             
         }
         if ( num != null )

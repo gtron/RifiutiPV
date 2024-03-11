@@ -62,14 +62,6 @@
 			<scope>
 				system</scope>
 		</dependency>
-		<!--		<dependency>-->
-		<!--			<groupId>local.dir</groupId>-->
-		<!--			<artifactId>hsqldb</artifactId>-->
-		<!--
-		<systemPath>/home/gtron/DGT/Rifiuti2024/lib/hsqldb-2.5.0.jar</systemPath>-->
-		<!--			<version>2.5.0</version>-->
-		<!--			<scope>system</scope>-->
-		<!--		</dependency>-->
 		<dependency>
 			<groupId>local.dir</groupId>
 			<artifactId>
@@ -121,14 +113,11 @@
 			<scope>
 				system</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.jfree/jfreechart -->
 		<dependency>
-			<groupId>local.dir</groupId>
-			<artifactId>jfreechart-1.0.1</artifactId>
-			<systemPath>
-				/home/gtron/DGT/Rifiuti2024/lib/jfreechart-1.0.1.jar</systemPath>
-			<version>
-				0.0.1</version>
-			<scope>system</scope>
+		    <groupId>org.jfree</groupId>
+		    <artifactId>jfreechart</artifactId>
+		    <version>1.0.19</version>
 		</dependency>
 		<dependency>
 			<groupId>local.dir</groupId>
@@ -229,32 +218,6 @@
 				com.lowagie.text</artifactId>
 			<version>2.1.7</version>
 		</dependency>
-		<!--
-		https://mvnrepository.com/artifact/org.jfree.chart/org.jfree.chart-library -->
-		<!--<dependency>-->
-		<!--    <groupId>org.jfree.chart</groupId>-->
-		<!--    <artifactId>org.jfree.chart</artifactId>-->
-		<!--    <version>1.0.1</version>-->
-		<!--    <type>jar</type>-->
-		<!--</dependency>-->
-		<!--
-		https://mvnrepository.com/artifact/org.jfree.chart/org.jfree.chart-library -->
-		<dependency>
-			<groupId>
-				org.jfree</groupId>
-			<artifactId>
-				jfreechart</artifactId>
-			<version>1.0.19</version>
-		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/org.hsqldb/hsqldb -->
-		<dependency>
-			<groupId>org.hsqldb</groupId>
-			<artifactId>hsqldb</artifactId>
-			<version>2.3.4</version>
-			<scope>test</scope>
-		</dependency>
-
 
 		<!-- https://mvnrepository.com/artifact/net.sf.ucanaccess/ucanaccess -->
 		<dependency>
@@ -263,6 +226,18 @@
 			<version>5.0.1</version>
 		</dependency>
 
+		
+<!-- ATTENZIONE: hsqldb 2.5.0 è già dipendenza di ucanaccess 5.0.1
+				<dependency>-->
+<!--					<groupId>local.dir</groupId>-->
+<!--					<artifactId>hsqldb</artifactId>-->
+		
+<!--					<systemPath>/home/gtron/DGT/Rifiuti2024/lib/hsqldb-2.5.0.jar</systemPath>-->
+<!--					<version>2.5.0</version>-->
+<!--					<systemPath>/home/gtron/DGT/Rifiuti2024/lib/hsqldb-1.8.0.jar</systemPath>-->
+<!--					<version>1.8.0</version>-->
+<!--					<scope>system</scope>-->
+<!--				</dependency>-->
 
 	</dependencies>
 

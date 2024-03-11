@@ -49,7 +49,7 @@ public class SQLCarico extends ISQLAdapter implements IAccessDBEnabled {
         try {
             super.create();
             Vector r = executeScalarQuery("CALL IDENTITY()") ;
-            return ((Integer) r.firstElement()).intValue() ;
+            return (Integer.valueOf("" + r.firstElement())).intValue() ;
         }
         catch ( Exception e ) {
             return -1 ;
@@ -210,8 +210,12 @@ public class SQLCarico extends ISQLAdapter implements IAccessDBEnabled {
         	
         	fields.put("CLIENTE", new DbValue("Cliente", DbValue.OBJECT ));
         	fields.put("DATA", new DbValue("data", DbValue.DATE ));
-        	fields.put("DATAPESATURA", new DbValue("dataPesatura", DbValue.DATE ));
-        	fields.put("DATASCARICO", new DbValue("DATASCARICO", DbValue.DATE ));
+        	
+        	
+			fields.put("DATAPESATURA", getFormattedDayDbValue("dataPesatura"));
+        	
+        	fields.put("DATASCARICO", getFormattedDayDbValue("DATASCARICO"));
+        	
         	fields.put("DESCRIZIONE", new DbValue("descrizione", DbValue.STRING));
         	fields.put("DESTINAZIONE", new DbValue("destinazione", DbValue.INTEGER ));
         	fields.put("FORNITORE", new DbValue("fornitore", DbValue.OBJECT ));
@@ -220,7 +224,9 @@ public class SQLCarico extends ISQLAdapter implements IAccessDBEnabled {
         	fields.put("NETTO", new DbValue("netto", DbValue.FLOAT ));
         	fields.put("CONSEGNA", new DbValue("consegna", DbValue.STRING ));
         	fields.put("DOCUMENTO", new DbValue("documento", DbValue.STRING ));
-        	fields.put("DATAFORMULARIO", new DbValue("dataformulario", DbValue.DATE ));
+        	
+        	fields.put("DATAFORMULARIO", getFormattedDayDbValue("dataformulario"));
+        	
         	fields.put("NUMEROCATASTE", new DbValue("numeroCataste", DbValue.INTEGER ));
         	fields.put("NUMEROPROGRESSIVO", new DbValue("numeroProgressivo", DbValue.STRING ));
         	fields.put("PESOFATTURA", new DbValue("pesoFattura", DbValue.DOUBLE ));
@@ -231,7 +237,17 @@ public class SQLCarico extends ISQLAdapter implements IAccessDBEnabled {
         return fields;
     }
     
-    public HashMap getAccessDBFields() {
+    private Object getFormattedDayDbValue(String fieldName) {
+		DbValue v = new DbValue(fieldName, DbValue.DATE );
+		try {
+			v.setDateFormat("yyyy-MM-dd");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return v;
+	}
+
+	public HashMap getAccessDBFields() {
        
         if (fields == null) {
             
@@ -544,7 +560,9 @@ public class SQLCarico extends ISQLAdapter implements IAccessDBEnabled {
     public void scarica( Carico c , FormattedDate data ) throws Exception {
         
         String sql = " update  " + getTable() + 
-        	" set datascarico = '" + data.fullString() + "' where id = " + c.getId() ; 
+        	" set datascarico = '" + data.ymdString() + "' " +
+        	" , DATAFORMULARIO = LEFT(DATAFORMULARIO, 10) " + 
+        	" where id = " + c.getId() ; 
         
         int x = db.executeNonQuery(sql) ;
         
@@ -601,9 +619,11 @@ public class SQLCarico extends ISQLAdapter implements IAccessDBEnabled {
         
         w[0] = (DbValue) fields.get("NUMEROPROGRESSIVO");
         w[1] = (DbValue) fields.get("DATA");
+        //w[2] = (DbValue) fields.get("DATAFORMULARIO");
         
         w[0].setValue(numeroProgressivo);
         w[1].setValue(data);
+        //w[1].setValue(data);
         
         Vector wV = new Vector(2) ; 
         wV.add( w[0] );

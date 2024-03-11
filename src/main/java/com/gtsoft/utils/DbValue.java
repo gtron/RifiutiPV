@@ -3,6 +3,7 @@
  */
 package com.gtsoft.utils;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.TimeZone;
 
@@ -23,7 +24,7 @@ public class DbValue {
 	public static final int DATETIME = 60 ;
 	public static final int OBJECT = 99 ;
 	
-	private static final String DATEFORMAT = "yyyyMMdd" ;
+	private static final String DATEFORMAT = "yyyy-MM-dd HH:mm:ss.0" ;
 //	private static final String DATETIMEFORMAT = "yyyyMMdd HH:mm:ss" ;
 	
 	private int type ;
@@ -127,8 +128,12 @@ public class DbValue {
 	        switch ( type ) { 
 	        case DATE :
 	            value = new FormattedDate( val );
+
+	            FormattedDate fdate = ((FormattedDate) value);
+	            fdate.setFormat(getDateFormat());
 	            formatter = new SimpleDateFormat( getDateFormat() ) ;
-	            formatter.setTimeZone( timezone );
+//	            formatter = new SimpleDateFormat("yyyy-dd-mm");
+	           
 	            strValue = "'" + value.toString() + "'" ; 
 	            break ;
 	            
@@ -249,6 +254,18 @@ public class DbValue {
             dateFormat = DATEFORMAT ;
         
         return dateFormat ;
+    }
+    
+    public void setDateFormat(String format) throws Exception {
+    	SimpleDateFormat check = new SimpleDateFormat( format );
+    	FormattedDate d = new FormattedDate();
+    	
+    	try {
+			if ( d.getTime() != check.parse(check.format(d)).getTime())
+			this.dateFormat = format;
+		} catch (ParseException e) {
+			throw new Exception("Invalid date format: " + format, e);
+		}
     }
     
     public int getType() {

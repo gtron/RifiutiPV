@@ -430,7 +430,8 @@ public class RifiutiFrame extends JFrame {
 				try {
 
 					hideElaboration();
-					if ( e.getMessage().startsWith("StampaRifiuti") ) {
+					e.printStackTrace();
+					if ( e != null && e.getMessage().startsWith("StampaRifiuti") ) {
 						// JOptionPane.showMessageDialog(this, e.getMessage(), " Attenzione ", JOptionPane.WARNING_MESSAGE );
 
 						if (JOptionPane.YES_OPTION == JOptionPane.showConfirmDialog(null,
@@ -693,9 +694,9 @@ public class RifiutiFrame extends JFrame {
 		}
 
 		try {
-//			if ( separateFumi ) {
-//				UIManager.setLookAndFeel("de.muntjak.tinylookandfeel.TinyLookAndFeel");
-//			}
+			if ( separateFumi ) {
+				UIManager.setLookAndFeel("de.muntjak.tinylookandfeel.TinyLookAndFeel");
+			}
 			splash.advance("Autenticazione Utente ...");
 			ConfigManager.createPasswordGui(this);
 		} catch (Exception e) {
@@ -1128,11 +1129,14 @@ public class RifiutiFrame extends JFrame {
 		 * 
 		 * ...
 		 * 3.1.9 - BugFix : non pulivo la cache dopo il purge delle tabelle nella chiusura anno
+		 * 
+		 * 4.0.0 - Mavenizzato - preparato per Java 11  o 17 ?
+		 * 4.0.1 - Sistemato problemi con la nuova versione di hsqldb
 		 */
 		public final static String APP_TITLE = "Gestione Rifiuti";
 		public final static String APP_TITLE_342 = "Gestione Rifiuto Fanghi Ex ENI Risorse";
 
-		public final static String APP_VERSION = "3.1.9";
+		public final static String APP_VERSION = "4.0.1";
 
 		public final static String APP_NAME = APP_TITLE + " v." + APP_VERSION ;
 

@@ -15,6 +15,7 @@ import javax.swing.JOptionPane;
 import com.gtsoft.rifiuti.front.RifiutiFrame;
 
 import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.view.JRViewer;
 
 
 /**
@@ -22,7 +23,7 @@ import net.sf.jasperreports.engine.JasperPrint;
  * 
  */
 public class ReportViewer extends javax.swing.JFrame {
-    //private net.sf.jasperreports.swing.JRViewer viewer = null;
+    private JRViewer viewer = null;
     private javax.swing.JPanel pnlMain;
     private RifiutiFrame ownerFrame ;
     private Vector listaMovimenti = null ;
@@ -33,8 +34,8 @@ public class ReportViewer extends javax.swing.JFrame {
         
         initComponents();
         
-//        this.viewer = new JRViewer(jasperPrint);
-//        this.pnlMain.add(this.viewer, BorderLayout.CENTER);
+        this.viewer = new JRViewer(jasperPrint);
+        this.pnlMain.add(this.viewer, BorderLayout.CENTER);
         this.setVisible(true);
     }
     

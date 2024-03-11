@@ -189,7 +189,7 @@ public class SwgMovimento extends AbstractSwg implements IFiltrable{
         jMainTable = new JMainTable(this);
         final JTable jTable=jMainTable.getJTable();
         jTable.getColumnModel().getColumn(0).setMinWidth(70);
-        jTable.getColumnModel().getColumn(0).setMaxWidth(70);
+        jTable.getColumnModel().getColumn(0).setMaxWidth(80);
         jTable.getColumnModel().getColumn(1).setMinWidth(50);
         jTable.getColumnModel().getColumn(1).setMaxWidth(50);
         jTable.getColumnModel().getColumn(2).setMinWidth(26);

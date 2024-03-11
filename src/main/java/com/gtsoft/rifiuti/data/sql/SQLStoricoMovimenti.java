@@ -134,6 +134,13 @@ public class SQLStoricoMovimenti extends ISQLAdapter {
         	
             DbValue d =  new DbValue("DATA", DbValue.DATE );
             d.setKey(true);
+            try {
+				d.setDateFormat("yyyy-MM-dd");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+            
             fields.put("DATA" , d ) ;
             
         	fields.put("CARICO", new DbValue("CARICO", DbValue.INTEGER ));
