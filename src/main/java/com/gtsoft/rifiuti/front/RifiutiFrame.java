@@ -1132,11 +1132,12 @@ public class RifiutiFrame extends JFrame {
 		 * 
 		 * 4.0.0 - Mavenizzato - preparato per Java 11  o 17 ?
 		 * 4.0.1 - Sistemato problemi con la nuova versione di hsqldb
+		 * 4.0.2 - Sistemato date per errore allo scarico
 		 */
 		public final static String APP_TITLE = "Gestione Rifiuti";
 		public final static String APP_TITLE_342 = "Gestione Rifiuto Fanghi Ex ENI Risorse";
 
-		public final static String APP_VERSION = "4.0.1";
+		public final static String APP_VERSION = "4.0.2";
 
 		public final static String APP_NAME = APP_TITLE + " v." + APP_VERSION ;
 

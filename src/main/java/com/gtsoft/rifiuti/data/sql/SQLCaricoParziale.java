@@ -495,7 +495,7 @@ public class SQLCaricoParziale extends ISQLAdapter {
     }
     public int scarica( int id , Movimento movScarico ) throws Exception {
         String sql = " update  " + getTable() + 
-    	" set datascarico = '" + movScarico.getData().fullString() + "', " +
+    	" set datascarico = '" + movScarico.getData().dmyString() + "', " +
     			" scarico = " + movScarico.getNumProgressivo() + "  where id = " + id ; 
     
         return db.executeNonQuery(sql) ;
